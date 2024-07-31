@@ -4,7 +4,11 @@ const { Redis } = require("ioredis");
 import 'dotenv/config';
 
 // Create WhatsApp client
-const client = new Client();
+const client = new Client({
+  puppeteer: {
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  }
+});
 
 // Redis connection setup
 const redisUrl = process.env.REDIS_URL || 'redis://';

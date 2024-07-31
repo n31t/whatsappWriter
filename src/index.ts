@@ -28,8 +28,9 @@ const redisConnection = new Redis(redisUrl, {
 // redisConnection.rpush('phoneQueue', JSON.stringify(testJob));
 
 // Generate QR code for WhatsApp Web
-client.on('qr', (qr) => {
-    qrcode.generate(qr, { small: true });
+client.on('qr', (qrCode) => {
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(qrCode)}`;
+  console.log('Scan this QR code:', qrCodeUrl);
 });
 
 // When WhatsApp client is ready

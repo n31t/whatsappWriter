@@ -49,7 +49,7 @@ async function processQueue() {
             if (job) {
                 const { user, apartment } = JSON.parse(job);
 
-                const landlordMessage = `Здравствуйте, это веб-приложение homespark, помогающее пользователям найти квартиры. Наш пользователь: ${user.surname} ${user.name}, заинтересовался вашей квартирой (${apartment.link}) и хотел бы ее посетить. 
+                const landlordMessage = `Здравствуйте, это создатель веб-приложения homespark, помогающее пользователям найти квартиры. Наш пользователь: ${user.surname} ${user.name}, заинтересовался вашей квартирой (${apartment.link}) и хотел бы ее посетить. 
                 \nДанные пользователя: 
                 \nИмя: ${user.name} ${user.surname}
                 \nТелефон: ${user.phoneNumber}
